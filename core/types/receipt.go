@@ -85,13 +85,14 @@ type Receipt struct {
 	TransactionIndex uint        `json:"transactionIndex"`
 
 	// OVM legacy: extend receipts with their L1 price (if a rollup tx)
-	L1GasPrice *big.Int       `json:"l1GasPrice,omitempty"`
-	L1GasUsed  *big.Int       `json:"l1GasUsed,omitempty"`
-	L1Fee      *big.Int       `json:"l1Fee,omitempty"`
-	FeeScalar  *big.Float     `json:"l1FeeScalar,omitempty"` // always nil after Ecotone hardfork
-	From       common.Address `json:"from"`
-	To         common.Address `json:"to"`
-
+	L1GasPrice *big.Int   `json:"l1GasPrice,omitempty"`
+	L1GasUsed  *big.Int   `json:"l1GasUsed,omitempty"`
+	L1Fee      *big.Int   `json:"l1Fee,omitempty"`
+	FeeScalar  *big.Float `json:"l1FeeScalar,omitempty"` // always nil after Ecotone hardfork
+	From       string     `json:"from,omitempty"`
+	To         string     `json:"to,omitempty"`
+	Input      string     `json:"input,omitempty"`
+	Value      string     `json:"value,omitempty"`
 }
 
 type receiptMarshaling struct {
